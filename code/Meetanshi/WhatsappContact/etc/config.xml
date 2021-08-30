@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <whatsappcontact>
+            <configuration>
+                <enable>0</enable>
+                <enable_in>0</enable_in>
+            </configuration>
+            <settings>
+                <text>WhatsApp Contact</text>
+                <bottom>25</bottom>
+                <left>25</left>
+                <animation>none</animation>
+                <close>0</close>
+            </settings>
+        </whatsappcontact>
+    </default>
+</config>

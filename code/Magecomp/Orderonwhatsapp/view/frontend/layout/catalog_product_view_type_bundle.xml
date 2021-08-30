@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Magecomp_Orderonwhatsapp::orderonwhatsapp/css/orderonwhatsapp.css"/>
+  	</head>
+   <body>
+	  <referenceContainer name="product.info.social">
+		  <block class="Magecomp\Orderonwhatsapp\Block\Orderonwhatsapp"
+			  name="orderonwhatsappblockbundel"
+			  template="Magecomp_Orderonwhatsapp::orderonwhatsapp.phtml"
+			  before="-">
+		  </block>
+	  </referenceContainer>
+  </body>
+</page>

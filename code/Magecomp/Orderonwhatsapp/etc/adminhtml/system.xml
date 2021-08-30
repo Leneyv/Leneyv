@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magecomp" translate="label" sortOrder="100">
+            <label>MAGECOMP</label>
+        </tab>
+        <section id="orderonwhatsapp" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Order On WhatsApp</label>
+            <tab>magecomp</tab>
+            <resource>Magecomp_Orderonwhatsapp::orderonwhatsappconfig</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Configuration</label>
+				<field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="enableonlymobile" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Only In Mobile</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends><field id="enable">1</field></depends>
+					<comment><![CDATA[Show only on mobile device]]></comment>
+				</field>
+				<field id="adminmobnumber" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enter WhatsApp Phone Number</label>
+					<validate>required-entry validate-number</validate>
+					<comment><![CDATA[Enter a valid mobile number followed by country code without + sign. for Example : 910123456789.]]></comment>
+					<depends><field id="enable">1</field></depends>
+				</field>
+				<field id="defaulttitle" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enter Title</label>
+					<comment><![CDATA[Enter Message To Appear On WhatsApp Conversation Before Product Title.]]></comment>
+					<depends><field id="enable">1</field></depends>
+				</field>
+				<field id="buttonsize" translate="label comment" sortOrder="50" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button Size</label>
+					<source_model>Magecomp\Orderonwhatsapp\Model\Size</source_model>
+					<depends><field id="enable">1</field></depends>
+				</field>
+            </group>
+			<group id="bitly" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Short URL Sharing Settings</label>
+				<field id="enable" translate="label" sortOrder="31" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Bilty Short URLs</label>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="loginname" translate="label" sortOrder="32" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Bitly Login Name</label>
+					<depends><field id="enable">1</field></depends>
+				</field>
+				<field id="apikey" translate="label" sortOrder="33" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Bitly API Key</label>
+					<depends><field id="enable">1</field></depends>
+				</field>
+				<field id="format" translate="label" sortOrder="34" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Bitly Format</label>
+					<depends><field id="enable">1</field></depends>
+				</field>
+			</group>
+		</section>
+    </system>
+</config>

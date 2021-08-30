@@ -1,0 +1,92 @@
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_Product360view
+ * @author    Webkul
+ * @copyright Copyright (c)  Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+ .wk_product360--thumb
+ {
+        display: inline-block;
+        position: relative;
+        height: 110px;
+        padding: 2px;
+        cursor: grab;
+ }
+
+ .wk_360thumb_img {
+       background-color: transparent;
+ }
+
+ .content-360view {
+     text-align: center;
+     z-index: 99;
+ }
+
+ .wk_autorotate{
+      padding:5px;
+      background-color:#86C840;
+      color:#fff;
+      text-decoration:none;
+      text-transform:uppercase;
+      margin: 5px;
+  }
+  #view360{
+      margin: auto;
+  }
+
+  .spritespin-canvas, .spritespin-stage, .spritespin-instance {
+    max-width: 780px;
+    max-height: 570px;
+    top: unset;
+  }
+
+  .spritespin-canvas{
+      top: unset;
+  }
+
+  .wk_startpause_btn {
+    display: inline-block;
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 20px;
+  
+    border-color: transparent transparent transparent #202020;
+    transition: 100ms all ease;
+    cursor: pointer;
+  
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+  }
+  
+  .wk_startpause_btn:hover{
+    border-color: transparent transparent transparent red;
+  
+  }
+  .paused{
+    border-style: double;
+    border-width: 0px 0 0px 15px;
+    border-color: green;
+  }
+
+  .wk_btn-base{
+      display: inline-block;
+      padding: 5px;
+  }
+
+  @media all and (max-width: 767px) {
+    .wk_product360--thumb {
+      display: block;
+      height: 88px;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    .wk_product360--thumb {
+      display: inline-block;
+    }
+  }

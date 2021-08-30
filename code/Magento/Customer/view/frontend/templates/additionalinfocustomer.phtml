@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/**
+ * Customer additional info for register and login forms
+ *
+ */
+?>
+<?php if ($this->helper(\Magento\Checkout\Helper\Data::class)->isContextCheckout()) : ?>
+<div class="field choice required">
+            <div class="control">
+                <label class="label"></label>
+                <input type="checkbox" name="is_read" id="is_read"  class="checkbox" required><span class="policy">I have read and accept the <a href="/privacy-policy" style="color:#0645AD;">privacy policy</a></span>
+
+             </div>    
+            </div>
+    <input name="context" type="hidden" value="checkout" />
+<?php endif; ?>

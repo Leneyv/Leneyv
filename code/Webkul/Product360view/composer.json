@@ -1,0 +1,21 @@
+{
+    "name": "webkul/product-360-view",
+    "description": "Webkul Magento2 Product 360 View",
+    "require": {
+        "magento/module-config": "101.1.*",
+        "magento/module-catalog": "103.0.*"
+    },
+    "type": "magento2-module",
+    "version": "3.0.0",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Webkul\\Product360view\\": ""
+        }
+    }
+}

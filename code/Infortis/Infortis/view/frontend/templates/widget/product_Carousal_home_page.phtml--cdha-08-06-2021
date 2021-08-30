@@ -1,0 +1,83 @@
+<?php 
+ 
+if($block->getData('prod_num') != "")
+{ 
+     
+       $prod_num = $block->getData('prod_num');
+       $type_of_product = $block->getData('type_of_product');
+    if($prod_num == "")
+    {
+        $prod_num = 1;
+    } 
+
+    if($type_of_product == "featured_products")
+    {
+     $prod_data_set = $block->getFeaturedProductCollection($prod_num);  
+    }
+    if($type_of_product == "recently_added_products")
+    {
+     $prod_data_set = $block->getrecent_ProductCollection($prod_num);  
+    }
+if($prod_data_set != NULL)
+{ 
+    $rand = rand(111111, 999999).date("mdHisy");
+?> 
+<div class="carousal_bx74" data-id="<?= $rand;?>" id="carsl_<?= $rand;?>"> 
+<?php
+foreach ($prod_data_set as $product) { 
+$prod_img = $block->get_prodimage($product);
+$selling_price = $product->getFinalPrice();
+$actual_price = $product->getPrice();
+$postParams = $block->getAddToCartPostParams($product);
+?>
+<div class="prd_hr745">
+<a href="<?= $product->getProductUrl();?>">
+<div class="_im_mnu74_b74">
+   <img src="<?= $prod_img;?>" />
+</div>
+   <div class="prd_lst_ft858">
+    <div>
+    <?= $product->getName();?>
+    </div>
+     <span class="product-image-sku">
+     <?= $product->getSku();?>                    
+     </span>
+     <div class="prc_bx75">
+     <div class="price" style="font-weight:700"><?= $block->get_prod_price($selling_price);?></div>
+     <?php
+                   if($selling_price < $actual_price )
+                   { 
+                    $diff_price = round($actual_price - $selling_price, 2); 
+?>
+                 <div class="product-price">
+                                <del class="price"><span class="hidden">Previous price</span><?= $block->get_prod_price($actual_price);?></del> 				<div class="legal">Save <?= $block->get_prod_price($diff_price);?></div>
+                 </div>
+                   <?php
+                   }
+                  ?>
+    </div>
+   </div> 
+    <div class="actn_btn_b745"> 
+    <form class="product_addtocart_form" data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
+        <input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
+        <input type="hidden" name="<?php /* @escapeNotVerified */ echo $block->getParamname_enc(); ?>" value="<?php /* @escapeNotVerified */ echo $postParams['data'][$block->getParamname_enc()]; ?>">
+        <?php echo $block->getBlockHtml('formkey')?>
+        <?php $storeManager = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Store\Model\StoreManagerInterface'); ?>
+            <button type="submit"
+                    title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                    class="action tocart primary">
+                <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+            </button>
+    </form>
+    </div>
+</a>
+</div>
+<?php
+} 
+?>
+</div> 
+<?php
+}
+
+}
+ 

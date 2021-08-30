@@ -1,0 +1,37 @@
+<?php /**  @var $block \WeSupply\Toolbox\Block\Adminhtml\Order\View\Tab\OrderView */  ?>
+<section class="admin__page-section order-view-wesupply-order-view">
+<!--    <div class="admin__page-section-item-title">-->
+<!--        <span class="title">--><?php //echo $block->getTabTitle(); ?><!--</span>-->
+<!--    </div>-->
+    <div class="admin__page-section-content">
+        <?php if (!$block->isWsAdminLoggedIn()): ?>
+            <div class="error-container">
+                <p><?php echo __('Your user <strong>%1</strong> is not authorized to access WeSupply.', $block->getAdminEmail()) ?></p>
+                <p><?php echo __('Please contact your account administrator.') ?></p>
+            </div>
+        <?php else: ?>
+            <div id="loading-container-order" data-role="spinner" class="admin__data-grid-loading-mask">
+                <p><?php echo __('Loading order. Please wait.') ?></p>
+                <div class="spinner">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div id="wesupply_order_view" class="embedded-iframe-container" style="display: none;"></div>
+            <script>
+                require(['jquery', 'wesupplyEmbeddedIframe'],
+                    function ($, wesupplyEmbeddedIframe) {
+                        $(function () {
+                            $('#sales_order_view_tabs_wesupply_order_view').on('click', function() {
+                                wesupplyEmbeddedIframe.loadIframe({
+                                    viewContainer: $('#wesupply_order_view'),
+                                    iframeId: 'wesupply_order_view_iframe',
+                                    loadingContainer: $('#loading-container-order'),
+                                    iframeUrl: '<?php echo $block->getOrderViewIframeUrl(); ?>'
+                                });
+                            });
+                        });
+                    });
+            </script>
+        <?php endif; ?>
+    </div>
+</section>

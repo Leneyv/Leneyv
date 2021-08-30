@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_Product360view
+ * @author    Webkul
+ * @copyright Copyright (c)  Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="webkul" translate="label" sortOrder="10">
+            <label>Webkul</label>
+        </tab>
+        <section id="product360view" translate="label" type="text" sortOrder="305" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product 360 view</label>
+            <tab>webkul</tab>
+            <resource>Webkul_Product360view::config_product360view</resource>
+            <group id="general_settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            	<label>Product 360 view configurations</label>
+                <field id="enable" translate="label comment" sortOrder="1" type="select" showInDefault="1" >
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            	<field id="frame_time" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>360 Frame Time</label>
+                    <comment> Frame time in ms.</comment>
+                    <validate>validate-digits required-entry validate-not-negative-number</validate>
+                </field>
+                <field id="thumbnail_image" translate="label" type="image" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thumbnail Image</label>
+                    <validate>required-entry</validate>
+                    <comment>Allowed file types: jpg, jpeg, gif, png. Recommended image size with same width and height ratio.</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">product360view/thumbnail</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">product360view/thumbnail</upload_dir>
+                </field>
+        	</group>
+    	</section>
+	</system>
+</config>

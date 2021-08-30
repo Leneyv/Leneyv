@@ -1,0 +1,25 @@
+
+<?php
+?>
+<div class="carousel-box text-black slick-slide slick-current" >
+    <div class="visual-area">
+        <img class="pc lazyloaded " alt="<?= $block->getData('slider_title');?>" aria-hidden="true" src="<?= $block->getData('image_data_img');?>">
+		<img class="mobile lazyloaded lazyload" alt="<?= $block->getData('slider_title');?>" aria-hidden="true" src="<?= $block->getData('image_data_img_mobile');?>">
+	</div>
+    <div class="text-area text-black align-left align-middle type-narrow align-mobile-top <?= $block->getData('slider_txt_color');?>_clr <?= $block->getData('slider_align_text');?>_sde">
+	   <div class="text-wrap">
+            <div class="inner">
+			     <div class="text-block">
+						      <div class="title" id="title55-1550478309794_4"><h2><?= $block->getData('slider_title');?></h2></div> 
+					
+				              <div class="copy font-regular "><?= $block->getData('slider_descr');?></div>
+				  </div>
+					 <div class="cta">
+								<div class="cta-button">
+									<span><a href="<?= $block->getData('image_data_url_text');?>" target="_blank" title="Opens in a new window" class="btn btn-primary btn-lg" aria-describedby="title55-1550478309794_4" data-link-area="hero_image-cta" data-link-name="fact_check_us"><?= $block->getData('slider_btn_text');?></a></span>
+								</div>
+				     </div>
+            </div>
+		</div>
+  </div>
+</div>

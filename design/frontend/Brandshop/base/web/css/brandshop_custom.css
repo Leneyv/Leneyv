@@ -1,0 +1,583 @@
+* {
+    box-sizing: border-box;
+}
+.bs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+}
+
+.bs-header-search {
+    display: flex;
+}
+
+.bs-header-search input {
+    width: 280px;
+    height: 35px;
+    border-radius: 25px;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #D8D8D8;
+}
+
+.bs-header-search input::placeholder {
+    font-family: Barlow;
+    font-size: 14px;
+    color: #A9A9A9;
+}
+
+.bs-header-search img {
+    margin-left: -35px;
+    opacity: 0.6;
+}
+
+.bs-logo {
+    max-height: 40px;
+}
+body {
+    font-family: Poppins;
+}
+
+.bs-page-body {
+    background: #E5E5E5;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.bs-page-heading {
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    margin: 58px 0 42px;
+    letter-spacing: -0.01em;
+    color: #323232;
+}
+
+.bs-select-company {
+    max-width: 560px;
+    flex: 1 1 auto;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 90px;
+    padding-bottom: 45px;
+}
+
+.bs-company-name {
+    font-weight: 600;
+    font-size: 36px;
+    color: #363838;
+    margin-bottom: 28px;
+}
+
+.bs-company-detail {
+    max-width: 285px;
+    font-size: 16px;
+    color: #363838;
+    margin: auto;   
+}
+
+.bs-company-img {
+    height: 154px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+.bs-company-img-lg {
+    height: 120px;
+}
+.d-flex {
+    display: flex;
+}
+
+@media (min-width: 992px) {
+    .mr-lg-20 {
+        margin-right: 20px;
+    }
+}
+
+.bs-page-content {
+    margin-bottom: 90px;
+}
+
+.bs-footer {
+    background: #2B2B2B;
+    color: #fff;
+}
+
+.bs-footer-copyright {
+    color: #9F9F9F;
+    text-transform: uppercase;
+    background: #262626;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+}
+
+.bs-footer-items {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 54px;
+}
+
+.bs-footer-links a:not(:hover) {
+    color: #D8D8D8;
+}
+
+.bs-newsletter-form {
+    display: flex;
+    margin-top: 16px;
+}
+
+.bs-newsletter-input {
+    background: #262626 !important;
+    border: 1px solid #363636 !important;
+    border-radius: 5px 0 0 5px !important;
+    max-width: 170px;
+    font-family: Poppins;
+    color: #fff;
+}
+
+.bs-newsletter-input:placeholder {
+    font-size: 13px;
+    color: #B5ADAD;
+}
+
+.bs-newsletter-btn {
+    border-radius: 0 5px 5px 0;
+    background: #FF7067;
+    border: 1px solid #363636;
+    font-weight: 500;
+    font-size: 14px;
+    max-width: 100px;
+    color: #fff;
+    font-family: Poppins;
+}
+
+.cms-ultimo-home-page-brandshop .wa_contact {
+    display: none;
+}
+
+
+@media (max-width: 1375px) {
+    .bs-select-company {
+        padding-top: 70px;
+        padding-bottom: 35px;
+    }
+
+    .bs-company-img {
+        margin-bottom: 40px;
+        height: 120px;
+    }
+
+    .bs-company-name {
+        margin-bottom: 15px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .bs-page-content {
+        flex-wrap: wrap;
+    }
+
+    .bs-select-company {
+        max-width: 80%;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .bs-footer-items {
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+    ul.bs-footer-links {
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .bs-header {
+        flex-direction: column;
+        padding: 25px 15px;
+    }
+
+    .bs-header-search {
+        margin-top: 15px;
+    }
+
+    .bs-company-img-lg {
+        height: auto;
+    }
+
+    .bs-company-img {
+        margin-bottom: 10px;
+        height: auto;
+        padding: 0 20px;
+    }
+
+    .bs-company-img img {
+        max-height: 100px;
+    }
+
+    .bs-select-company {
+        padding-top: 35px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .bs-footer-items > div {
+        width: 100%;
+    }
+
+    ul.bs-footer-links {
+        margin: 25px 0 0;
+    }
+
+    .bs-footer-item-4 {
+        margin-top: 25px;
+    }
+}
+
+/*===*/
+.cms-ultimo-home-page-brandshop .bs-page-body .container {
+    max-width: 1140px !important;
+}
+
+.cms-ultimo-home-page-brandshop .bs-footer .container {
+    max-width: 1140px !important;
+}
+
+.cms-ultimo-home-page-brandshop ul.bs-footer-links li {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.cms-ultimo-home-page-brandshop .bs-footer-item-4 .block.newsletter {
+    margin-top: 16px;
+}
+
+.cms-ultimo-home-page-brandshop .header-container .logo-wrapper .logo img {
+    width: auto !important;
+    height: 40px;
+    padding: 0;
+}
+
+.cms-ultimo-home-page-brandshop .header-regular .block-search .input-text {
+    width: 280px;
+    height: 35px;
+    border-radius: 25px;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #D8D8D8 !important;
+}
+
+.cms-ultimo-home-page-brandshop .header-primary.header.container .hp-block.right-column.sds.grid12-3 {
+    position: static;
+    width: auto;
+}
+
+.cms-ultimo-home-page-brandshop .iw_columns.col-lg-12.test {
+    padding: 0;
+}
+
+.cms-ultimo-home-page-brandshop #action-search {
+    opacity: 0.5;
+    right: 10px;
+    top: -2px;
+}
+
+.cms-ultimo-home-page-brandshop #block-search #search_mini_form {
+    display: flex;  
+}
+
+.cms-ultimo-home-page-brandshop #block-search .actions {
+    margin-left: auto;
+    position: relative;
+}
+.cms-ultimo-home-page-brandshop .main.container.full-width.no-side-padding {
+    padding: 0; 
+}
+
+.cms-ultimo-home-page-brandshop .searchsuite-autocomplete {
+    left: 0;
+    right: auto;
+    width: 280px;
+}
+
+.cms-ultimo-home-page-brandshop .header-primary-container .inner-container {
+    padding: 3px 40px;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter .field .control:before {
+    display: none;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter input {
+    padding: 0 9px;
+    background: #262626 !important;
+    border: 1px solid #363636 !important;
+    border-radius: 5px 0 0 5px !important;
+    width: 190px;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter .field {
+    margin-right: 0;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter .action.subscribe {
+    border-radius: 0 5px 5px 0 !important;
+    background: #FF7067;
+    border: 1px solid #363636;
+    max-width: 100px;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter .action.subscribe span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter .form.subscribe {
+    display: flex;
+    align-items: center;
+}
+
+
+.cms-ultimo-home-page-brandshop .block, .block-banners, .block-banners-inline {
+    margin-bottom: 0;
+}
+
+.cms-ultimo-home-page-brandshop small.copyright {
+    color: #9F9F9F;
+    text-transform: uppercase;
+    background: #262626;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+}
+
+@media (max-width: 1024px) {
+    .cms-ultimo-home-page-brandshop .main.container,
+    .cms-ultimo-home-page-brandshop .main-container {
+        background: #e5e5e5;
+    }
+}
+
+@media (max-width: 768px) {
+    .cms-ultimo-home-page-brandshop .header-container .logo-wrapper--mobile {
+        margin: 0 auto 10px !important;
+    }
+
+    .cms-ultimo-home-page-brandshop .header-container .skip-links--1 .skip-link,
+    .cms-ultimo-home-page-brandshop .top-menu.header_site74,
+    .cms-ultimo-home-page-brandshop .header-primary-container {
+        display: none;
+    }
+
+    .cms-ultimo-home-page-brandshop .skip-content.skip-content--style {
+        padding: 0;
+        z-index: 99999;
+        display: block;
+    }
+
+    .cms-ultimo-home-page-brandshop .field.search {
+        width: 100%;
+    }
+
+    .cms-ultimo-home-page-brandshop .block-search .input-text {
+        border-radius: 20px;
+        padding: 0 20px;
+    }
+
+    .cms-ultimo-home-page-brandshop .field.search .control {
+        background: #fff;
+    }
+
+    .cms-ultimo-home-page-brandshop .searchsuite-autocomplete {
+        width: 100%;
+    }
+
+    .cms-ultimo-home-page-brandshop .bs-page-content {
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .cms-ultimo-home-page-brandshop .skip-content.skip-content--style {
+        padding: 5px 10px 12px;
+        background: #fff;
+    }
+
+    .cms-ultimo-home-page-brandshop .bs-page-heading {
+        margin-top: 80px;
+    }
+}
+/*18/08*/
+
+.headings-font, .main-font, h1, h2, h3, h4, h5, .section-title, .products-list .product-name, .filter .block-subtitle, .feature .heading, .uaccordion .heading, .block .block-title, #opc-login h3, .box-account .box-head h2, .order-items h2.table-caption, .order-items h2.sub-title, .order-items .order-comments h2, .product.data.items>.item.title>.switch, .footer .heading, #subscribe-form label, .caption .heading,
+.field.search .control #search::placeholder,
+p, span, li,
+.field.newsletter #newsletter::placeholder,
+.bs-page-heading,
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="datetime"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.bs-company-name a {
+    font-weight: 600;
+    font-size: 36px;
+    color: #363838;
+    margin-bottom: 28px;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter input {
+    width: 200px;
+}
+
+.cms-ultimo-home-page-brandshop .block.newsletter .action.subscribe {
+    background: #FF7067 !important;
+}
+
+/*24/08*/
+
+body .bs-page-body .container {
+    max-width: 1140px !important;
+}
+
+body .bs-footer .container {
+    max-width: 1140px !important;
+}
+
+body ul.bs-footer-links li {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+body .bs-footer-item-4 .block.newsletter {
+    margin-top: 16px;
+}
+
+body .header-container .logo-wrapper .logo img {
+    width: auto !important;
+    height: 40px;
+    padding: 0;
+}
+
+body .header-regular .block-search .input-text {
+    width: 280px;
+    height: 35px;
+    border-radius: 25px;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #D8D8D8 !important;
+}
+
+body .header-primary.header.container .hp-block.right-column.sds.grid12-3 {
+    position: static;
+    width: auto;
+}
+
+body .iw_columns.col-lg-12.test {
+    padding: 0;
+}
+
+body #action-search {
+    opacity: 0.5;
+    right: 10px;
+    top: -2px;
+}
+
+body #block-search #search_mini_form {
+    display: flex;  
+}
+
+body #block-search .actions {
+    margin-left: auto;
+    position: relative;
+}
+
+body .main.container.full-width.no-side-padding {
+    padding: 0; 
+}
+
+body .searchsuite-autocomplete {
+    left: 0;
+    right: auto;
+    width: 280px;
+}
+
+body .header-primary-container .inner-container {
+    padding: 3px 40px;
+}
+
+body .block.newsletter .field .control:before {
+    display: none;
+}
+
+body .block.newsletter input {
+    padding: 0 9px;
+    background: #262626 !important;
+    border: 1px solid #363636 !important;
+    border-radius: 5px 0 0 5px !important;
+    width: 190px;
+}
+
+body .block.newsletter .field {
+    margin-right: 0;
+}
+
+body .block.newsletter .action.subscribe {
+    border-radius: 0 5px 5px 0 !important;
+    background: #FF7067;
+    border: 1px solid #363636;
+    max-width: 100px;
+}
+
+body .block.newsletter .action.subscribe span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+body .block.newsletter .form.subscribe {
+    display: flex;
+    align-items: center;
+}
+
+
+body .block, .block-banners, .block-banners-inline {
+    margin-bottom: 0;
+}
+
+body small.copyright {
+    color: #9F9F9F;
+    text-transform: uppercase;
+    background: #262626;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+}
+
+.whatsapp_a span {
+    margin-top: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-whatsapp:before {
+    content: "\f232";
+    font-size: 40px;
+}
+
+a#wa_chat.whatsapp_a {
+    display: none !important;
+}

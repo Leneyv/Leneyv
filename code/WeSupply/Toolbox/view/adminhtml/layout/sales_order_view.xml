@@ -1,0 +1,17 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="sales_order_tabs">
+            <action method="addTab">
+                <argument name="name" xsi:type="string">wesupply_order_view</argument>
+                <argument name="block" xsi:type="string">WeSupply\Toolbox\Block\Adminhtml\Order\View\Tab\OrderView</argument>
+            </action>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">wesupply_returns_view</argument>
+                <argument name="block" xsi:type="string">WeSupply\Toolbox\Block\Adminhtml\Order\View\Tab\ReturnsView</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="extra_customer_info">
+            <block class="WeSupply\Toolbox\Block\Adminhtml\Order\View\Tab\WeSupplyDashboard" name="wesupply.dashboard.iframe" template="WeSupply_Toolbox::iframedashboard.phtml" />
+        </referenceContainer>
+    </body>
+</page>

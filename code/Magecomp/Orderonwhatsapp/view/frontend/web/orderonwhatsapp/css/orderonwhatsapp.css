@@ -1,0 +1,51 @@
+@charset "utf-8";
+.add-to-cart > p{float:left; width:70px;}
+.wa_btn_s {
+	background: url("../images/small.png");
+	background-repeat:no-repeat;
+    display: block;
+    font-size: 0;
+    height:50px;
+    width: 50px; 
+	margin-bottom:25px;
+}
+.list-whatsapp {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.list_wa_btn_s {
+	background: url("../images/small.png");
+	background-repeat:no-repeat;
+	margin:0 auto;
+    display: block;
+	float:none;
+    font-size: 0;
+    height:50px;
+    width: 50px; 
+	
+}
+.wa_btn_m {
+	background:url(../images/medium.png) no-repeat scroll 0 0 !important;
+	display: block;
+	font-size:0;
+	width:145px;
+	height:50px;
+    background-size: 20px;
+    background-position: 4px 2px;
+    padding: 4px 6px 4px 30px;
+	margin:15px 0 20px 0;
+}
+
+.wa_btn_l {
+	/*background:url(../images/large.png) no-repeat scroll 0 0 !important;*/
+    font-size: 16px;
+    background-size: 20px;
+    background-position: 5px 5px;
+    padding: 6px 8px 25px !important;
+	width:190px;
+	height:50px;
+	display: block;
+	font-size:0;
+	margin:10px 0 0 0 !important;
+}

@@ -1,0 +1,55 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_Product360view
+ * @author    Webkul
+ * @copyright Copyright (c)  Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+
+$helper = $block->getHelperObject();
+$productId = $block->getProductId();
+$moduleEnable = $helper->getConfigData('enable');
+$product360viewShow = $block->canShowThumbnail();
+$thumbnail = '360_image_thumbnail.png';
+if ($helper->getConfigData('thumbnail_image')) {
+    $thumbnail = $helper->getConfigData('thumbnail_image');
+}
+
+if ($moduleEnable && $product360viewShow) {
+    $frameTime = $helper->getConfigData('frame_time');
+    $mediaImagecount = $block->countMediaImages();
+    $mediaUrl = $helper->getmediaUrl();
+    $thumbImage = $mediaUrl.'/'.'thumbnail/'.$thumbnail;
+    $product360images = $block->escapeHtml($helper->getProductImagesJson($productId));
+    // @codingStandardsIgnoreLineStart
+    $imagePath = "<div class='wk_product360--thumb fotorama__nav__frame' style='width: 88px; height: 88px' tabindex='0' role='button' data-gallery-role='nav-frame' data-nav-type='thumb' data-active='false'><div class='fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img wk_360thumb_img'><img src='$thumbImage' class='' aria-hidden='false'></div></div>";
+    // @codingStandardsIgnoreLineEnd
+    ?>
+    
+    <div class="content-360view" style="display:none">
+            <div id="view360">
+            </div>
+            <div class='wk_btn-base'>
+                <div class='wk_startpause_btn paused'>
+                </div>
+            </div>
+    </div>
+    <script type="text/x-magento-init">
+    {
+        "*":{
+            "Webkul_Product360view/js/image360view":{
+                "imageTag": {
+                  "frameTime": "<?= /* @noEscape */ $frameTime ; ?>",
+                  "imagePath": "<?= /* @noEscape */ $imagePath ; ?>",
+                  "mediaImagecount": "<?= /* @noEscape */ $mediaImagecount ; ?>",
+                  "product360images": "<?= /* @noEscape */ $product360images ; ?>"
+                }
+            }
+        }
+    }
+    </script>
+    <?php
+} ?>

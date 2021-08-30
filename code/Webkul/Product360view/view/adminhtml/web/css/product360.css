@@ -1,0 +1,201 @@
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_Product360view
+ * @author    Webkul
+ * @copyright Copyright (c)  Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+ #image-container, #wk_media_gallery_content{
+    border: 2px dotted #ccc;
+    clear: both;
+    content: "";
+    display: table;
+    margin-bottom: 2px;
+    padding: 5px 0 0;
+    position: relative;
+}
+#image-container .image ,#wk_media_gallery_content .image {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 125px;
+    margin: 0 0.8rem;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 125px;
+}
+.image .product-360image-thumbnail {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.image.image-placeholder:before {
+    color: #ccc;
+    content: "\e63c";
+    display: inline-block;
+    font-family: "Admin Icons";
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: inherit;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.image .action-delete {
+    bottom: 6px;
+    left: 6px;
+    position: absolute;
+    z-index: 10;
+}
+.image .action-delete:before {
+    color: #9e9e9e;
+    content: "\e630";
+    display: inline-block;
+    font-family: "Admin Icons";
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: inherit;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+.image .file-row {
+    background: url("../images/ajax-loader-big.gif") no-repeat scroll 50% 50% #fff;
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    text-indent: -999em;
+    top: 0;
+    width: auto;
+    z-index: 5;
+}
+.file-row {
+    border: 1px solid #adadad;
+    margin: 0.5rem 0;
+    padding: 2px;
+}
+.actions .action-delete span {
+    display: none;
+}
+.action-delete[type="button"]:hover:before{
+    background: none repeat scroll 0 0 transparent;
+    color: red;
+}
+.action-delete[type="button"]{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    padding: 0;
+    box-shadow: none;
+}
+.image .draggable-handle {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    line-height: inherit;
+    cursor: move;
+    display: inline-block;
+    height: 20px;
+    left: 3px;
+    position: absolute;
+    text-decoration: none;
+    top: 2px;
+    width: 20px;
+    z-index: 3;
+}
+.image .draggable-handle:before {
+    color: #9e9e9e;
+    content: "\e617";
+    display: inline-block;
+    font-family: "Admin Icons";
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: inherit;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.image:hover .actions .action-delete{
+    visibility: visible;
+}
+
+.wk-image360-preview {
+    display: inline-block;
+    float: right;
+    margin: 5px;
+}
+
+.content-360view {
+    text-align: center;
+}
+
+.wk_autorotate{
+    position: absolute;
+    display:block;
+    padding:5px;
+    background-color:#86C840;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    right: 40%;
+    bottom: 1%;
+}
+#view360{
+    margin: auto;
+}
+
+.spritespin-canvas, .spritespin-stage, .spritespin-instance {
+    max-width: 750px;
+    max-height: 550px;
+    top: unset;
+  }
+
+  .spritespin-canvas{
+      top: unset;
+  }
+
+.wk_startpause_btn {
+    display: inline-block;
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 20px;
+    border-color: transparent transparent transparent #202020;
+    transition: 100ms all ease;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 10px 0 10px 15px;
+  }
+  
+  .wk_startpause_btn:hover{
+    border-color: transparent transparent transparent red;
+  
+  }
+  .paused{
+    border-style: double;
+      border-width: 0px 0 0px 15px;
+      border-color: green;
+  }
+
+  .wk_btn-base{
+      display: inline-block;
+      padding: 5px;
+  }

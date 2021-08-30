@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_Product360view
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="product360view" xsi:type="array">
+                    <item name="class" xsi:type="string">Webkul\Product360view\Ui\DataProvider\Product\Form\Modifier\Product360view</item>
+                    <item name="sortOrder" xsi:type="number">27</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

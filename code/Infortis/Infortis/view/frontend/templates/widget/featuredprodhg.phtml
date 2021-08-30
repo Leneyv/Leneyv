@@ -1,0 +1,150 @@
+<?php 
+if($block->getData('category_id') != "")
+{ 
+    $category_id = $block->getData('category_id');
+    $prod_num = $block->getData('prod_num');
+    if($prod_num == "")
+    {
+        $prod_num = 1;
+    }
+ 
+   $category_id_array = $this->getAllChildren(true, $category_id);  
+   $prod_data_set = $block->getProductCollection($category_id_array, $prod_num);  
+if($prod_data_set != NULL)
+{ 
+?>
+<div class="col-md-3">
+    <span class="dt_b_lne85"></span>
+		<h4 class="heading">Recommended Product</h4>		
+        <div>
+    <?php
+      foreach ($prod_data_set as $product) { 
+        $prod_img = $block->get_prodimage($product);
+        $selling_price = $product->getFinalPrice();
+        $actual_price = $product->getPrice();
+        ?>
+        <a href="<?= $product->getProductUrl();?>" class="prd_hr745">
+        <div class="_im_mnu74_b74">
+            <img src="<?= $prod_img;?>" />
+        </div>
+            <div class="prd_lst_ft85">
+              <?= $product->getName();?>
+              <div>
+              <span class="product-image-sku">
+                    <?= $product->getSku();?>                    
+                    </span>
+              </div>
+                    <div class="prc_bx75">
+              <div class="price" style="font-weight:700"><?= $block->get_prod_price($selling_price);?></div>
+              <?php
+                   if($selling_price < $actual_price )
+                   { 
+                    $diff_price = round($actual_price - $selling_price, 2); 
+?>
+                 <div class="product-price">
+                                <del class="price"><span class="hidden">Previous price</span><?= $block->get_prod_price($actual_price);?></del> 				<div class="legal">Save <?= $block->get_prod_price($diff_price);?></div>
+                 </div>
+                   <?php
+                   }
+                  ?>
+              </div>
+            </div> 
+        </a>
+        <?php
+    } 
+    ?>
+    </div>
+	</div>
+<?php
+}
+?>
+ <div class="col-md-3"> 
+ <?php
+$get_categData = $block->get_categData($category_id);
+    if($get_categData != NULL)
+    {  
+    ?>
+ <a href="<?= $get_categData['url'];?>?product_list_order=price&product_list_dir=desc" class="link-text bold ico-right">
+            <div>
+           View All Products <span></span>
+            </div>
+            </a>
+            <?php
+    }
+    ?>
+<div class="column banner">
+<div class="banner-visual">
+<a href="<?= $block->getData('banner_url');?>">
+<img class=" lazyloaded" alt="OLED  See How Good Blank Can Be" src="<?= $block->getData('banner_image_url');?>" data-loaded="true">
+<div class="banner-text-box">
+<div class="text-block">
+<?php
+if($block->getData('banner_text') != null)
+{
+echo $block->getData('banner_text');
+}
+?>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+        <div class="col-md-3" style="text-align: center;"> 
+      
+            <?php
+            $categ_prod_num = $block->getData('category_prod_num');
+            $prod_data_set = $block->getis_MenuProductCollection($category_id_array, $categ_prod_num);  
+if($prod_data_set != NULL)
+{ 
+?> 
+         <div class="dt_mnu_prodct74"> 
+    <?php
+      foreach ($prod_data_set as $product) { 
+        $prod_img = $block->get_prodimage($product);
+        $selling_price = $product->getFinalPrice();
+        $actual_price = $product->getPrice();
+        ?>
+        <div class="prd_hr745">
+        <a href="<?= $product->getProductUrl();?>">
+        <div class="_im_mnu74_b">
+            <img src="<?= $prod_img;?>" />
+        </div>
+            <div class="prd_lst_ft858">
+              <?= $product->getName();?>
+              <div>
+              <span class="product-image-sku">
+                    <?= $product->getSku();?>                    
+                    </span>
+              </div>
+              <div class="prc_bx75">
+              <div class="price" style="font-weight:700"><?= $block->get_prod_price($selling_price);?></div>
+              <?php
+                   if($selling_price < $actual_price )
+                   { 
+                    $diff_price = round($actual_price - $selling_price, 2); 
+?>
+                 <div class="product-price">
+                                <del class="price"><span class="hidden">Previous price</span><?= $block->get_prod_price($actual_price);?></del> 				<div class="legal">Save <?= $block->get_prod_price($diff_price);?></div>
+                 </div>
+                   <?php
+                   }
+                  ?>
+                  </div> 
+            </div> 
+        </a>
+        </div>
+        <?php
+    } 
+    ?>
+    </div> 
+<?php
+}
+?>
+           
+        </div>  
+
+    <?php 
+}
+ 

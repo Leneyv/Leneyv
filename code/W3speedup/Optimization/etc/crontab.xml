@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="w3speedup">
+		<job instance="W3speedup\Optimization" method="execute" name="W3speedup_Optimization">
+			<schedule>1 * * * *</schedule>
+		</job>
+	</group>
+</config>

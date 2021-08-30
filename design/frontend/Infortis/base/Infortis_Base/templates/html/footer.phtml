@@ -1,0 +1,428 @@
+<?php
+/**
+ * @var \Infortis\Base\Block\Html\Header $block
+ */
+?>
+<?php
+    $theme = $block->getHelperTheme();
+
+    // //Get HTML of header blocks
+    // $storeSwitcherHtml = $block->getChildHtml('store_switcher');
+    // $copyrightHtml = $block->getChildHtml('copyright');
+    // $footerLinksHtml = $block->getChildHtml('footer_links');
+    // $cmsFooterLinksContainerHtml = $block->getChildHtml('cms_footer_links_container');
+    // $newsletterHtml = $block->getChildHtml('subscribe');
+    // $magentoDefaultFooterContainerHtml = $block->getChildHtml('footer');
+?>
+<div class="footer-container page-footer">
+<div class="footer-container2">
+<div class="footer-container3">
+
+    <?php
+        $b = array();
+        if ($theme->getCfg('footer/footer_links') && $tmp = $block->getChildHtml('footer_links'))
+        {
+            $b['top']['footer_links'] = $tmp;
+        }
+        //Custom footer links - override default Magento footer links
+        if ($tmp = $block->getChildHtml('block_footer_links'))
+        {
+            $b['top']['block_footer_links'] = $tmp;
+        }
+        //Secondary custom footer links
+        if ($tmp = $block->getChildHtml('block_footer_links2'))
+        {
+            $b['top']['block_footer_links2'] = $tmp;
+        }
+    ?>
+
+    <?php if (!empty($b['top'])): ?>
+
+    <div class="footer-top-container section-container">
+        <div class="footer-top footer container">
+            <div class="inner-container links-wrapper-separators">
+
+                <?php if (!empty($b['top']['footer_links'])): ?>
+                    <div class="item item-left"><?php echo $b['top']['footer_links']; ?></div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['top']['block_footer_links'])): ?>
+                    <div class="item item-left"><?php echo $b['top']['block_footer_links']; ?></div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['top']['block_footer_links2'])): ?>
+                    <div class="item item-right"><?php echo $b['top']['block_footer_links2']; ?></div>
+                <?php endif; ?>
+
+            </div> <!-- end: inner-container -->
+        </div> <!-- end: footer-top -->
+    </div>
+
+    <?php endif; ?>
+
+    <?php
+        $b['primary'] = $theme->getFormattedBlocks($block, $theme->getCfg('footer/links_column_auto_width'));
+
+        if ($tmp = $block->getChildHtml('block_footer_primary_bottom_left'))
+        {
+            $b['primary_bottom']['left'] = $tmp;
+        }
+        if ($tmp = $block->getChildHtml('block_footer_primary_bottom_right'))
+        {
+            $b['primary_bottom']['right'] = $tmp;
+        }
+        if ($theme->getCfg('footer/newsletter') && $tmp = $block->getChildHtml('subscribe'))
+        {
+            $b['primary_bottom']['newsletter'] = $tmp;
+        }
+
+        if ($tmp = $block->getChildHtml('footer'))
+        {
+         $b['primary_top']['magentoDefaultFooterContainerHtml'] = $tmp;
+        }
+    ?>
+    
+    <?php if (!empty($b['primary']) || !empty($b['primary_bottom']) || !empty($b['primary_top'])): ?>
+    
+    <div class="footer-primary-container section-container<?php //if($classString['primary-container']) echo " " . $classString['primary-container']; ?>">
+        <div class="footer-primary footer container">
+            <div class="inner-container">
+
+                <?php if (!empty($b['primary_top'])): ?>
+                <div class="footer-primary-top">
+                    <div class="<?php if(!empty($b['primary'])) echo 'footer-primary-top-spacing '; ?>inner">
+                        <?php echo $b['primary_top']['magentoDefaultFooterContainerHtml']; ?>
+                    </div> 
+                </div> <!-- end: footer-primary-top -->
+                <?php endif; ?>
+
+                <?php if (!empty($b['primary'])): ?>
+                    <div class="clearfix">
+                        <?php echo $b['primary']; ?>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($b['primary_bottom'])): ?>
+                <div class="footer-primary-bottom">
+                    <div class="<?php if(!empty($b['primary'])) echo 'footer-primary-bottom-spacing '; ?>inner">
+                    
+                        <?php if (!empty($b['primary_bottom']['left'])): ?>
+                            <div class="item item-left">
+                                <?php echo $b['primary_bottom']['left']; ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if (!empty($b['primary_bottom']['right'])): ?>
+                            <div class="item item-right">
+                                <?php echo $b['primary_bottom']['right']; ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if (!empty($b['primary_bottom']['newsletter'])): ?>
+                            <div class="item item-right newsletter-wrapper">
+                                <?php echo $b['primary_bottom']['newsletter']; ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                    </div> 
+                </div> <!-- end: footer-primary-bottom -->
+                <?php endif; ?>
+            
+            </div> <!-- end: inner-container -->
+        </div> <!-- end: footer-primary -->
+    </div>
+    
+    <?php endif; ?>
+
+    <?php
+        if ($tmp = $block->getChildHtml('copyright'))
+        {
+            $b['bottom']['copyright'] = $tmp;
+        }
+        if ($tmp = $block->getChildHtml('block_footer_payment'))
+        {
+            $b['bottom']['block_footer_payment'] = $tmp;
+        }
+        if ($theme->getCfg('footer/store_switcher') && $tmp = $block->getChildHtml('store_switcher'))
+        {
+            $b['bottom']['store_switcher'] = $tmp;
+        }
+    ?>
+
+    <?php if (!empty($b['bottom'])): ?>
+
+    <div class="footer-bottom-container section-container">
+        <div class="footer-bottom footer container">
+            <div class="inner-container">
+                
+                <?php if (!empty($b['bottom']['copyright'])): ?>
+                    <div class="item item-left">
+                        <div class="footer-copyright"><?php echo $b['bottom']['copyright']; ?></div>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['bottom']['block_footer_payment'])): ?>
+                    <div class="item item-right"><?php echo $b['bottom']['block_footer_payment']; ?></div>
+                <?php endif; ?>
+
+                <?php if (!empty($b['bottom']['store_switcher'])): ?>
+                    <div class="item item-right"><?php echo $b['bottom']['store_switcher']; ?></div>
+                <?php endif; ?>
+
+            </div> <!-- end: inner-container -->
+        </div> <!-- end: footer-bottom -->
+    </div>
+
+    <?php endif; ?>
+    
+    <a id="scroll-to-top" class="ic ic-up" href="#top"></a>
+    <a id="call-to-icons" class="scroll_call" href="tel:+254752151151"><img src="https://lg.brandshop.co.ke/assets/images/icons/LG-Electronics-call-brandshopKenya-GRC.png"></a>
+</div> <!-- end: footer-container3 -->
+</div> <!-- end: footer-container2 -->
+</div> <!-- end: footer-container --> 
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function openCity1(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent1");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks1");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function openCity2(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent2");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks2");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function openCity3(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent3");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks3");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+ 
+<!--<script>
+    /* tv offers */  
+       jQuery(".offli1").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           jQuery("#door_in_door").addClass("add-active");
+           
+            jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#new_nanocell_tvs").removeClass("add-active");
+           jQuery("#new_4k_uhd_tvs").removeClass("add-active");
+           jQuery(".offer2 > div ,.offer3 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer2 div:nth-child(1) ,.offer3 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offli2").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           jQuery("#door_in_door").addClass("add-active");
+           
+           jQuery("#new_oled_tvs").removeClass("add-active");
+           jQuery("#new_nanocell_tvs").addClass("add-active");
+           jQuery("#new_4k_uhd_tvs").removeClass("add-active");
+           jQuery(".offer2 > div ,.offer3 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer2 div:nth-child(1) ,.offer3 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offli3").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           jQuery("#door_in_door").addClass("add-active");
+           
+           jQuery(".offer1 #new_oled_tvs").removeClass("add-active");
+           jQuery("#new_nanocell_tvs").removeClass("add-active");
+           jQuery("#new_4k_uhd_tvs").addClass("add-active");
+           jQuery(".offer2 > div ,.offer3 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer2 div:nth-child(1) ,.offer3 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       
+     /* washing machine */  
+       jQuery(".offer2 li:nth-child(1)").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#door_in_door").addClass("add-active");
+           
+            jQuery("#front_load").addClass("add-active");
+           jQuery("#washer_dryers").removeClass("add-active");
+           jQuery("#top_load").removeClass("add-active");
+           jQuery(".offer1 > div ,.offer3 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer3 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offer2 li:nth-child(2)").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#door_in_door").addClass("add-active");
+           
+           jQuery("#front_load").removeClass("add-active");
+           jQuery("#washer_dryers").addClass("add-active");
+           jQuery("#top_load").removeClass("add-active");
+            jQuery(".offer1 > div ,.offer3 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer3 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offer2 li:nth-child(3)").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#door_in_door").addClass("add-active");
+           
+           jQuery("#front_load").removeClass("add-active");
+           jQuery("#washer_dryers").removeClass("add-active");
+           jQuery("#top_load").addClass("add-active");
+           jQuery(".offer1 > div ,.offer3 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer3 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+    
+    
+     /* refrigerator */  
+       jQuery(".offer3 li:nth-child(1)").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           
+            jQuery("#door_in_door").addClass("add-active");
+           jQuery("#side_by_side").removeClass("add-active");
+           jQuery("#double_door").removeClass("add-active");
+            jQuery(".offer1 > div ,.offer2 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer2 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offer3 li:nth-child(2)").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           
+           jQuery("#door_in_door").removeClass("add-active");
+           jQuery("#side_by_side").addClass("add-active");
+           jQuery("#double_door").removeClass("add-active");
+           jQuery(".offer1 > div ,.offer2 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer2 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offer3 li:nth-child(3)").click(function(){
+           jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           
+           jQuery("#door_in_door").removeClass("add-active");
+           jQuery("#side_by_side").removeClass("add-active");
+           jQuery("#double_door").addClass("add-active");
+          jQuery(".offer1 > div ,.offer2 > div,.offer4 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer2 div:nth-child(1) ,.offer4 div:nth-child(1) ").addClass("add-active");
+       });
+       
+       
+       
+        /* basic offers */  
+       jQuery(".offer4 li:nth-child(1)").click(function(){
+           jQuery("#door_in_door").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           
+            jQuery("#new_gen_oled_data").addClass("add-active");
+           jQuery("#laudnry_wdg_data").removeClass("add-active");
+           jQuery("#ref_wdg_data").removeClass("add-active");
+           jQuery(".offer1 > div ,.offer2 > div,.offer3 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer2 div:nth-child(1) ,.offer3 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offer4 li:nth-child(2)").click(function(){
+           jQuery("#door_in_door").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           
+           jQuery("#new_gen_oled_data").removeClass("add-active");
+           jQuery("#laudnry_wdg_data").addClass("add-active");
+           jQuery("#ref_wdg_data").removeClass("add-active");
+           jQuery(".offer1 > div ,.offer2 > div,.offer3 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer2 div:nth-child(1) ,.offer3 div:nth-child(1) ").addClass("add-active");
+       });
+       jQuery(".offer4 li:nth-child(3)").click(function(){
+           jQuery("#door_in_door").addClass("add-active");
+           jQuery("#new_oled_tvs").addClass("add-active");
+           jQuery("#front_load").addClass("add-active");
+           
+           jQuery("#new_gen_oled_data").removeClass("add-active");
+           jQuery("#laudnry_wdg_data").removeClass("add-active");
+           jQuery("#ref_wdg_data").addClass("add-active");
+           jQuery(".offer1 > div ,.offer2 > div,.offer3 > div").removeClass("add-active");
+           jQuery(".offer1 div:nth-child(1) ,.offer2 div:nth-child(1) ,.offer3 div:nth-child(1) ").addClass("add-active");
+       });
+</script>
+
+-->
+
+<script type="text/javascript">
+var desc = document.querySelector("#description");
+var flixInpage = document.createElement("div");
+flixInpage.setAttribute("id", "flix-inpage");
+desc.prepend(flixInpage);
+var product_mpn = document.querySelector(".product.attribute.sku [itemprop='sku']").textContent;
+var product_ean = "";
+var product_brand = "LG";
+var distributor = "16966";
+var language = "ke";
+var fallback_language = "";
+var headID = document.getElementsByTagName("head")[0];
+var flixScript = document.createElement("script");
+flixScript.type = "text/javascript";
+flixScript.async = true;
+flixScript.src = "//media.flixfacts.com/js/loader.js";
+flixScript.setAttribute("data-flix-distributor", distributor);
+flixScript.setAttribute("data-flix-language", language);
+flixScript.setAttribute("data-flix-fallback-language", fallback_language);
+flixScript.setAttribute("data-flix-brand", product_brand);
+flixScript.setAttribute("data-flix-ean", product_ean);
+flixScript.setAttribute("data-flix-mpn", product_mpn);
+flixScript.setAttribute("data-flix-inpage", "flix-inpage");
+flixScript.setAttribute("data-flix-price", "");
+headID.appendChild(flixScript);
+</script>
+<script type = "text/javascript">  
+jQuery(document).ready(function(){
+jQuery(".btn.calltoorder").appendTo(".product-shop.product-info-main");
+
+ });
+    </script>
+<style>
+    .wa_btn_l{    display: inline;}
+    .btn.calltoorder{    margin-left: 15px;
+    margin-top: 3px;}
+    div#additional.data.item.content {
+    display: none !important;
+}
+</style>

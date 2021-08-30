@@ -1,0 +1,327 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+            <widget class="Infortis\Infortis\Block\Widget\Featuredprodhg" id="infortis_infortisfeatured_prod_hg">
+                        <label>Main menu content widget - HG</label>
+                        <description></description>
+                        <parameters>
+                                    <parameter name="category_id" sort_order="10" visible="true" xsi:type="text"  required="true" >
+                                                <label>Enter category id</label>
+                                    </parameter>  
+                                      <parameter name="prod_num" sort_order="10" visible="true" xsi:type="text"  required="true" >
+                                                <label>How many products allow to display in featured products section</label>
+                                    </parameter> 
+                                     <parameter name="banner_url" sort_order="10" visible="true" xsi:type="text"  required="true" >
+                                                <label>Banner url</label>
+                                    </parameter> 
+                                     <parameter name="banner_image_url" xsi:type="block"  visible="true" sort_order="10"  required="true" >
+                                    <label translate="true">Choose the Banner image</label>
+                                    <description translate="true"></description>
+                                    <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                                        <data>
+                                            <item name="button" xsi:type="array">
+                                                <item name="open" xsi:type="string">Choose Image...</item>
+                                            </item>
+                                        </data>
+                                    </block>
+                                </parameter>
+                                 <parameter name="banner_text" sort_order="10"  visible="true" xsi:type="text">
+                                                <label>Banner short text</label>
+                                    </parameter>  
+                                    <parameter name="category_prod_num" sort_order="10" required="true" visible="true" xsi:type="text">
+                                                <label>How many category products display in menu slider</label>
+                                    </parameter>
+                        </parameters>
+            </widget>
+            <widget class="Infortis\Infortis\Block\Widget\Bestsalewidget" id="infortis_infortisbest_sale_widget">
+                        <label>Best sale widget - HG</label>
+                        <description>It shows the best sale product widget in home page</description>
+                        <parameters>
+                         <parameter name="widget_title" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Widget title</label>
+                         </parameter>  
+                                    <parameter name="product_ids" sort_order="10"  required="true"  visible="true" xsi:type="text">
+                                                <label>Enter product ids (enter any three high priority product ids)</label>
+                                    </parameter>   
+                                    <parameter name="photo" xsi:type="block" required="true" visible="true" sort_order="10">
+                                    <label translate="true">Choose the main widget image</label>
+                                    <description translate="true"></description>
+                                    <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                                        <data>
+                                            <item name="button" xsi:type="array">
+                                                <item name="open" xsi:type="string">Choose Image...</item>
+                                            </item>
+                                        </data>
+                                    </block>
+                                </parameter>
+                                  <parameter name="photo_title" sort_order="10" required="true" visible="true" xsi:type="text">
+                                                <label>Enter main image title</label>
+                                    </parameter>  
+                                      <parameter name="photo_description" sort_order="10" required="true"  visible="true" xsi:type="text">
+                                                <label>Enter main image short description</label>
+                                    </parameter> 
+                                      <parameter name="photo_link" sort_order="10" required="true" visible="true" xsi:type="text">
+                                                <label>Enter main image link</label>
+                                    </parameter>
+                                     <parameter name="photo_link_text" sort_order="10" required="true" visible="true" xsi:type="text">
+                                                <label>Enter main image link text</label>
+                                    </parameter>       
+                        </parameters>
+            </widget>
+             <widget class="Infortis\Infortis\Block\Widget\ProductCarousalListing" id="infortis_infortisproduct_carousal_listing">
+                        <label>Listing product page carousal (Category based products)- HG</label>
+                        <description>It shows the category based product listing</description>
+                        <parameters>
+                        <parameter name="sub_category_name" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Sub Category name</label>
+                         </parameter> 
+                         <parameter name="sub_category_url" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Sub Category url</label>
+                         </parameter>  
+                        <parameter name="sub_categ_img" xsi:type="block" required="true" visible="true" sort_order="10">
+                        <label translate="true">Choose the Sub Category image</label>
+                        <description translate="true"></description>
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>       
+                        </parameters>
+            </widget>
+             <widget class="Infortis\Infortis\Block\Widget\HomepageImageadvertisement" id="infortis_infortishomepage_image_advertisement">
+                        <label>Home page image based advertisement</label>
+                        <description>It shows the 4 images template in home page</description>
+                        <parameters>
+                         <parameter name="image_data1_content" sort_order="1" visible="true"  xsi:type="text">
+                                                <label>Image 1 description</label>
+                         </parameter>  
+                        <parameter name="image_data1_url" sort_order="2" visible="true" required="true" xsi:type="text">
+                                                <label>Image 1 url</label>
+                         </parameter>  
+                         <parameter name="image_data1_url_text" sort_order="3" visible="true" required="true" xsi:type="text">
+                                                <label>Image 1 url text</label>
+                         </parameter> 
+                        <parameter name="image_data1_img" xsi:type="block" required="true" visible="true" sort_order="4">
+                        <label translate="true">Choose the Image 1</label>
+                        <description translate="true"></description>
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>  
+
+ <parameter name="image_data2_content" sort_order="5" visible="true"  xsi:type="text">
+                                                <label>Image 2 description</label>
+                         </parameter>  
+                    <parameter name="image_data2_url" sort_order="6" visible="true" required="true" xsi:type="text">
+                                                <label>Image 2 url</label>
+                         </parameter>  
+                            <parameter name="image_data2_url_text" sort_order="7" visible="true" required="true" xsi:type="text">
+                                                <label>Image 2 url text</label>
+                         </parameter>  
+                        <parameter name="image_data2_img" xsi:type="block" required="true" visible="true" sort_order="8">
+                        <label translate="true">Choose the Image 2</label>
+                        <description translate="true"></description>
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>  
+
+ <parameter name="image_data3_content" sort_order="9" visible="true"  xsi:type="text">
+                                                <label>Image 3 description</label>
+                         </parameter>  
+                     <parameter name="image_data3_url" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Image 3 url</label>
+                         </parameter>  
+                           <parameter name="image_data3_url_text" sort_order="11" visible="true" required="true" xsi:type="text">
+                                                <label>Image 3 url text</label>
+                         </parameter>  
+                        <parameter name="image_data3_img" xsi:type="block" required="true" visible="true" sort_order="12">
+                        <label translate="true">Choose the Image 3</label>
+                        <description translate="true"></description>
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>  
+
+ <parameter name="image_data4_content" sort_order="13" visible="true"  xsi:type="text">
+                                                <label>Image 4 description</label>
+                         </parameter>  
+                     <parameter name="image_data4_url" sort_order="14" visible="true" required="true" xsi:type="text">
+                                                <label>Image 4 url</label>
+                         </parameter>  
+                          <parameter name="image_data4_url_text" sort_order="15" visible="true" required="true" xsi:type="text">
+                                                <label>Image 4 url text</label>
+                         </parameter>  
+                        <parameter name="image_data4_img" xsi:type="block" required="true" visible="true" sort_order="16">
+                        <label translate="true">Choose the Image 4</label>
+                        <description translate="true"></description>
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>  
+
+                     <parameter name="image_data5_content" sort_order="17" visible="true" xsi:type="text">
+                                                <label>Image 5 description</label>
+                         </parameter>  
+                     <parameter name="image_data5_url" sort_order="18" visible="true" required="true" xsi:type="text">
+                                                <label>Image 5 url</label>
+                         </parameter>  
+                         <parameter name="image_data5_url_text" sort_order="19" visible="true" required="true" xsi:type="text">
+                                                <label>Image 5 url text</label>
+                         </parameter>  
+                         
+                        <parameter name="image_data5_img" xsi:type="block" required="true" visible="true" sort_order="20">
+                        <label translate="true">Choose the Image 5</label>
+                        <description translate="true"></description> 
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>         
+                        </parameters>
+            </widget>
+             <widget class="Infortis\Infortis\Block\Widget\Homeslider" id="infortis_infortishome_slider">
+                        <label>Home slider - HG</label>
+                        <description></description>
+                        <parameters> 
+                        <parameter name="slider_title" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Slider title</label>
+                         </parameter>  
+                         <parameter name="slider_descr" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Slider Short Description</label>
+                         </parameter>  
+                          <parameter name="slider_btn_text" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Slider Button text</label>
+                         </parameter>  
+                         <parameter name="slider_btn_link" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Slider Button link</label>
+                         </parameter> 
+                          <parameter name="slider_btn_link" sort_order="10" visible="true" required="true" xsi:type="text">
+                                                <label>Slider Button link</label>
+                         </parameter> 
+                         <parameter name="slider_txt_color" xsi:type="select" sort_order="10" visible="true" required="true">
+                            <label translate="true">Slider text color</label>
+                            <options>
+                             <option name="black" value="black" selected="true">
+                                    <label translate="true">Black</label>
+                                </option>
+                                <option name="white" value="white" >
+                                    <label translate="true">White</label>
+                                </option> 
+                            </options>
+                        </parameter>
+                         <parameter name="slider_align_text" xsi:type="select" sort_order="10" visible="true" required="true">
+                            <label translate="true">Slider text position</label>
+                            <options>
+                             <option name="right" value="right" selected="true">
+                                    <label translate="true">Right</label>
+                                </option>
+                                <option name="left" value="left" >
+                                    <label translate="true">Left</label>
+                                </option> 
+                            </options>
+                        </parameter>
+                        <parameter name="slider_main_img" xsi:type="block" required="true" visible="true" sort_order="10">
+                        <label translate="true">Choose the Web image</label>
+                        <description translate="true"></description>
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>  
+                    <parameter name="slider_mobile_img" xsi:type="block" required="true" visible="true" sort_order="10">
+                        <label translate="true">Choose the mobile image</label>
+                        <description translate="true"></description>
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>       
+                        </parameters>  
+                       
+            </widget>
+
+             <widget class="Infortis\Infortis\Block\Widget\productCarousal" id="infortis_infortisproduct_carousal">
+                        <label>various types of product Carousal - HG</label>
+                        <description></description>
+                        <parameters>
+                            <parameter name="prod_num" sort_order="10" visible="true" xsi:type="text"  required="true" >
+                                                <label>How many products allow to display in products carousal</label>
+                            </parameter> 
+                            
+                                  <parameter name="type_of_product" xsi:type="select" sort_order="10" visible="true" required="true">
+                            <label translate="true">Select type of products</label>
+                            <options>
+                             <option name="featured_products" value="featured_products" selected="true">
+                                    <label translate="true">Featured Products</label>
+                                </option>
+                                <option name="recently_added_products" value="recently_added_products" >
+                                    <label translate="true">Recently Added products</label>
+                                </option> 
+                            </options>
+                                     </parameter> 
+                        </parameters>
+            </widget>
+ <widget class="Infortis\Infortis\Block\Widget\listingpageSlider" id="infortis_infortislistingpage_slider">
+                        <label>Listing Page image Slider- HG</label>
+                        <description></description> 
+                          <parameters>
+                        <parameter name="image_data_url" sort_order="1" visible="true" required="true" xsi:type="text">
+                                                <label>Button url</label>
+                         </parameter>  
+                         <parameter name="image_data_url_text" sort_order="2" visible="true" required="true" xsi:type="text">
+                                                <label>Button text</label>
+                         </parameter>  
+                         
+                        <parameter name="image_data_img" xsi:type="block" required="true" visible="true" sort_order="3">
+                        <label translate="true">Choose the Image for web</label>
+                        <description translate="true"></description> 
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>  
+                    <parameter name="image_data_img_mobile" xsi:type="block" required="true" visible="true" sort_order="3">
+                        <label translate="true">Choose the Image for mobile</label>
+                        <description translate="true"></description> 
+                        <block class="Infortis\Infortis\Block\Widget\ImageChooser">
+                            <data>
+                                <item name="button" xsi:type="array">
+                                    <item name="open" xsi:type="string">Choose Image...</item>
+                                </item>
+                            </data>
+                        </block>
+                    </parameter>         
+                        </parameters>
+            </widget>
+</widgets> 

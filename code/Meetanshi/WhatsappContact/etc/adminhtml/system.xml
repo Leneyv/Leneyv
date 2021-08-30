@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="meetanshi" translate="label" sortOrder="100">
+            <label>
+               Meetanshi</label>
+        </tab>
+        <section id="whatsappcontact" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>WhatsApp Contact</label>
+            <tab>meetanshi</tab>
+            <resource>Meetanshi_WhatsappContact::whatsappcontact_config</resource>
+            <group id="configuration" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>WhatsApp Contact</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="enable_in" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable WhatsApp Contact In</label>
+                    <source_model>Meetanshi\WhatsappContact\Model\Config\Source\Devices</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="default_message" translate="label" type="textarea" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Default Chat Message</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="settings" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>WhatsApp Contact Button Settings</label>
+                <field id="mobile_number" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Contact Mobile Number</label>
+                    <comment><![CDATA[Enter number with country code.(+91) for india.]]></comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="text" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Button Hover Text</label>
+                    <validate>validate-length maximum-length-20</validate>
+                    <comment>
+                        <![CDATA[The text will get displayed when contact button will be hovered. Maximum character limit is 20 and each space will be counted as a character.]]></comment>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="background_color" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Button Background Color</label>
+                    <frontend_model>Meetanshi\WhatsappContact\Block\Color</frontend_model>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="icon_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Icon Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Meetanshi\WhatsappContact\Block\Color</frontend_model>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="fromdate" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Button Display From</label>
+                    <frontend_model>Meetanshi\WhatsappContact\Block\Calendar</frontend_model>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="todate" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Button Display To</label>
+                    <frontend_model>Meetanshi\WhatsappContact\Block\Calendar</frontend_model>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="top" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Top Position</label>
+                    <comment><![CDATA[In pixel. Leave blank to unset the position.]]></comment>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="right" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Right Position</label>
+                    <comment><![CDATA[In pixel. Leave blank to unset the position.]]></comment>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="bottom" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Bottom Position</label>
+                    <comment><![CDATA[In pixel. Default 25px.]]></comment>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="left" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Left Position</label>
+                    <comment><![CDATA[In pixel. Default 25px.]]></comment>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="animation" translate="label" type="select" sortOrder="110" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Button Animation Effect</label>
+                    <source_model>Meetanshi\WhatsappContact\Model\Config\Source\Animation</source_model>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+                <field id="close" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Close Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <depends>
+                        <field id="whatsappcontact/configuration/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

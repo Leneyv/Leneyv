@@ -1,0 +1,13 @@
+Legend
+
++ Features
+- Bugs
+
+-------------------------------- Version 3.0.0 --------------------------------------
+    + Compatible with Magento 2.3.x.
+    + Admin can easily set the 360 degree view of a product.
+    + Admin can delete the images he has added to a 360 degree product view.
+    + With 360 degree product view, a customer can view every side of a product in a 360-degree rotating view.
+    + Customer can stop or start again the 360 degree product view by clicking on the start/stop button.
+    + Spin speed in which images rotate in a 360 degree view of a product can be managed by the admin.
+    + Admin can preview the product 360 view, before saving the product and can manage the images accordingly.

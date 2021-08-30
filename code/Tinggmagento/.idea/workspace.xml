@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65126c39-8a64-4080-b567-891eec64c3c5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/Ipay/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="fb140194-1ca7-426d-b24c-6de63f61a808" />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1bi3sQ7tdh8BToKTTDSAnF2inL0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dumpAutoload /Users/king/Documents/CELLULANT/SDK_PLUGINS/Tinggmagento/Tingg/composer.json" value="--no-interaction --ansi --verbose" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65126c39-8a64-4080-b567-891eec64c3c5" name="Default Changelist" comment="" />
+      <created>1589101292301</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589101292301</updated>
+      <workItem from="1589101294142" duration="1665000" />
+      <workItem from="1589103425599" duration="179000" />
+      <workItem from="1589103686548" duration="729000" />
+      <workItem from="1589124248046" duration="956000" />
+      <workItem from="1589125567916" duration="1907000" />
+      <workItem from="1589127557062" duration="408000" />
+      <workItem from="1589128349891" duration="1426000" />
+      <workItem from="1589130942411" duration="10000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="417" y="79" key="#CLI_Interpreters" timestamp="1589127054693">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="417" y="79" key="#CLI_Interpreters/0.23.1280.732@0.23.1280.732" timestamp="1589127054693" />
+    <state x="428" y="278" key="ComposerDumpAutoloadDialog" timestamp="1589127455183">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="428" y="278" key="ComposerDumpAutoloadDialog/0.23.1280.732@0.23.1280.732" timestamp="1589127455183" />
+    <state x="396" y="278" width="488" height="293" key="ComposerInitDialogKey" timestamp="1589127060350">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="396" y="278" width="488" height="293" key="ComposerInitDialogKey/0.23.1280.732@0.23.1280.732" timestamp="1589127060350" />
+    <state x="228" y="129" key="IDE.errors.dialog" timestamp="1589124026719">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="228" y="129" key="IDE.errors.dialog/0.23.1280.732@0.23.1280.732" timestamp="1589124026719" />
+    <state x="161" y="56" key="NewPhpClassDialog" timestamp="1589128418412">
+      <screen x="0" y="23" width="1280" height="733" />
+    </state>
+    <state x="161" y="56" key="NewPhpClassDialog/0.23.1280.732@0.23.1280.732" timestamp="1589127617765" />
+    <state x="161" y="56" key="NewPhpClassDialog/0.23.1280.733@0.23.1280.733" timestamp="1589128418412" />
+    <state x="459" y="318" key="NewPhpFileDialog" timestamp="1589120042348">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="459" y="318" key="NewPhpFileDialog/0.23.1280.732@0.23.1280.732" timestamp="1589120042348" />
+    <state x="141" y="29" key="SettingsEditor" timestamp="1589103392785">
+      <screen x="0" y="23" width="1280" height="736" />
+    </state>
+    <state x="141" y="29" key="SettingsEditor/0.23.1280.736@0.23.1280.736" timestamp="1589103392785" />
+    <state x="417" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589119051117">
+      <screen x="0" y="23" width="1280" height="734" />
+    </state>
+    <state x="417" y="23" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1280.734@0.23.1280.734" timestamp="1589119051117" />
+    <state x="0" y="23" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1589126774858">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="0" y="23" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.23.1280.732@0.23.1280.732" timestamp="1589126774858" />
+    <state x="341" y="23" width="598" height="732" key="find.popup" timestamp="1589124604437">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="341" y="23" width="598" height="732" key="find.popup/0.23.1280.732@0.23.1280.732" timestamp="1589124604437" />
+    <state x="341" y="23" width="598" height="734" key="find.popup/0.23.1280.734@0.23.1280.734" timestamp="1589117948295" />
+    <state x="341" y="23" width="598" height="736" key="find.popup/0.23.1280.736@0.23.1280.736" timestamp="1589102713506" />
+    <state x="341" y="23" width="598" height="737" key="find.popup/0.23.1280.737@0.23.1280.737" timestamp="1589104022358" />
+  </component>
+</project>

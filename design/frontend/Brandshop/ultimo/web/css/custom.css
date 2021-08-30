@@ -1,0 +1,249 @@
+.hp-block div#header-account::before {
+    content: "";
+}
+.hp-block div#header-account {
+    background-image: url(../images/login-nero.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto auto;
+    margin-left: 8px;
+}
+.icon.custom-minicart-icon {
+    background-image: url(../images/cart-nero.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto auto;
+    margin-left: 8px;
+}
+.icon.custom-search-icon.ib.ib-square.ib-hover {
+    background-image: url(../images/search-nero.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto auto;
+    margin-left: 8px;
+    vertical-align: text-top;
+}
+div#header-account:hover ul.header.links {
+    display: inline-block;
+    top: 30px;
+}
+.hp-block div#header-account:hover{
+    background-image: url(../images/login-carmine.svg);
+}
+#action-search {
+    /* background: black !important; */
+    opacity: 1;
+    color: #fff !important;
+    background-color: transparent !important;
+}
+#call-to-icons {
+    display: none !important;
+}
+
+.navi .nav-panel--dropdown h6 a:hover {
+    text-decoration: underline;
+    color: #6b6b6b !important;
+}
+.navi .nav-panel--dropdown h6 a {
+    font-weight: 600;
+    color: #6b6b6b;
+    font-size: 16px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 400 !important;
+}
+.nav-regular .nav-item a span {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 800 !important;
+}
+
+ .owl-carousel.carousal_bx74.owl-theme.categories-slider {
+    max-width: 1170px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.model-name.top h2 {
+    color: #333;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+}
+.iw_columns.col-lg-12.test {
+    position: relative;
+    padding: 80px 0 80px;
+}
+.owl-carousel.carousal_bx74.owl-theme.categories-slider .item {
+    padding: 30px;
+    margin-right: 28px;
+    display: block;
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+    background-color: #fff;
+    min-height: 310px;
+}
+.owl-carousel.carousal_bx74.owl-theme.categories-slider .item img {
+    width: 170px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.owl-carousel.carousal_bx74.owl-theme.categories-slider .item p {
+    text-align: center;
+    font-size: 16px;
+    color: #6b6b6b;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.owl-carousel.carousal_bx74.owl-theme.categories-slider .owl-prev {
+    font-size: 128px;
+    position: absolute;
+    left: -60px;
+    color: #c3c3c3;
+}
+.owl-carousel.carousal_bx74.owl-theme.categories-slider .owl-next {
+    font-size: 128px;
+    position: absolute;
+    right: -60px;
+    color: #c3c3c3;
+}
+.products .itemgrid > li:nth-of-type(4n+1) {
+    clear: unset !important;
+}
+.products .itemgrid > li:nth-of-type(3n+1) {
+    clear: left !important;
+}
+.itemgrid .item {
+    width: 31%;
+    clear: none !important;
+}
+div#iw_placeholder1548819042871 {
+	background-color: #fff !important;
+	padding: 0px 0px !important;
+}
+._im_mnu74_b {
+    width: 100% !important;
+    height: auto !important;
+}
+.product-image-wrapper {
+    position: unset !important;
+}
+.product-image-container .product-image-photo {
+    width: 270px;
+}
+div#iw_placeholder1548819042871 {
+    background-color: #fff !important;
+    padding: 0px 0px !important;
+}
+ ._im_mnu74_b {
+    width: 100% !important;
+    height: auto !important;
+}
+.product-image-wrapper {
+    position: unset !important;
+}
+.product-image-container .product-image-photo {
+    width: 270px;
+}
+h1.page-title span.base {
+    font-size: 29px;
+    font-weight: 700;
+    margin-top: 4px;
+    font-size: 22px !important;
+    line-height: 28px;
+    color: #000;
+    font-weight: 600 !important;
+}
+
+@media (min-width: 768px) {
+	.C0058 .tab-area .tab-wrap .tabs-type-rect {
+		margin: 40px auto 0 !important;
+	}
+}
+	
+@media (max-width:767px){
+	.skip-link.skip-nav.skip-active:before {
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		top: 7px;
+		left: 0px;
+		width: 22px;
+	}
+	.skip-link.skip-nav.skip-active:after {
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		top: 7px;
+		width: 22px;
+	}
+	.skip-link.skip-nav.skip-active span.icon.ic.ic-menu:after {
+		display:none
+	}
+}
+@media only screen and (max-width: 479px) {
+    .info-area .price-area {
+        min-height: 30px;
+    }
+    .column .C0058 .promo-area .list-area .item .img a {
+        height: auto;
+    }
+    .column .C0058 .promo-area .list-area .item:nth-child(1),
+    .column .C0058 .promo-area .list-area .item:nth-child(2),
+    .column .C0058 .promo-area .list-area .item:nth-child(3) {
+        height: auto !important;
+    }
+    .header-container .skip-link .ic-search {
+        background-image: url(../images/search-nero.svg);
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: auto auto;
+        margin-left: 8px;
+    }
+    .ic-user::before, .ic-search::before {
+        content: "";
+    }
+
+    .header-container .skip-link .ic-user{
+        background-image: url(../images/login-nero.svg);
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: auto auto;
+        margin-left: 8px;
+    }
+
+    .nav-panel.nav-panel--dropdown.full-width.is-active .nav-panel-inner span {
+        background-image: url(../images/icons/Close-Mobile.png);
+        width: 13px;
+        height: 11px;
+        background-size: 95%;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+        z-index: 10000;
+    }
+}

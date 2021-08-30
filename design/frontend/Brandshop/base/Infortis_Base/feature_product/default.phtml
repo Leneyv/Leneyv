@@ -1,0 +1,6 @@
+<?php
+$ids = [7];
+$categoryProducts = $block->getProductCollectionByCategories($ids);
+foreach ($categoryProducts as $product) {
+    echo $product->getName() . ' - ' . $product->getProductUrl() . '<br />';
+}

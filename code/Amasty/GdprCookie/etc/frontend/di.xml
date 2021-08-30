@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2020 Amasty (https://www.amasty.com)
+ * @package Amasty_GdprCookie
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\Response\Http">
+        <plugin name="amcookieRemove" type="Amasty\GdprCookie\Plugin\Response\Http"/>
+    </type>
+    <type name="Magento\Framework\View\Page\Config\Renderer">
+        <plugin name="Amasty_GdprCookie::make-css" type="Amasty\GdprCookie\Plugin\View\Page\Config\Renderer" />
+    </type>
+    <type name="Magento\Framework\Controller\ResultInterface">
+        <plugin name="GdprCookie::ProcessPageResult" type="Amasty\GdprCookie\Plugin\ProcessPageResult" sortOrder="25" />
+    </type>
+    <type name="Magento\Framework\App\PageCache\Identifier">
+        <plugin name="Amasty_GdprCookie::ChangeIdentifier" type="Amasty\GdprCookie\Plugin\Framework\App\PageCache\CacheIdentifierPlugin" sortOrder="10"/>
+    </type>
+</config>

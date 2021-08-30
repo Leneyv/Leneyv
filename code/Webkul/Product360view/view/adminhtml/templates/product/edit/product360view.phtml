@@ -1,0 +1,167 @@
+<?php
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_Product360view
+ * @author    Webkul
+ * @copyright Copyright (c)  Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+$helper = $block->getHelperObject();
+$productId = $block->getProductId();
+?>
+<div class="field">
+    <div class="wk-image360-preview">
+        <button type="button"
+                class="image360-preview"
+                data-mage-init = '{"image360Preview":{"template":"#media_gallery_content-preview"}}'
+                data-mediaurl = "<?= /* @noEscape */ $helper->getMediaUrl() ?>"
+                data-configframetime = "<?= /* @noEscape */ $helper->getConfigData('frame_time') ?>"
+                data-role = "image360-preview"
+                title = "<?= /* @noEscape */ $block->escapeHtml(__('Preview')) ?>">
+            <span><?= $block->escapeHtml(__('Preview')) ?></span >
+        </button>
+    </div>
+    <div class="content-360view" style="display:none">
+        <div id="view360">
+        </div>
+        <div class='wk_btn-base'>
+            <div class='wk_startpause_btn paused'>
+            </div>
+        </div>
+    </div>
+    <div id="wk_media_gallery_content"
+       class='gallery'
+       data-mage-init='{"image360Gallery":{"template":"#media_gallery_content-template"}}'
+       data-images="<?= $block->escapeHtml($helper->getProductImagesJson($productId, true)) ?>">
+      <div class="image image-placeholder">
+        <div id="media_gallery_content_Uploader" class="uploader">
+            <div class="fileinput-button form-buttons">
+                <span><?= /* @escapeNotVerified */ $block->escapeHtml(__('Browse Files...')) ?></span>
+                <input id="fileupload" type="file" name="image"
+                    data-url="<?= /* @noEscape */ $block->getUrl('product360view/product_gallery/upload');?>" 
+                    multiple="multiple" />
+            </div>
+            <div class="clear">
+            </div>
+            <script id="media_gallery_content_Uploader-template" type="text/x-magento-template">
+                <div id="<%- data.id %>" class="file-row">
+                    <span class="file-info"><%- data.name %> (<%- data.size %>)</span>
+                    <div class="progressbar-container">
+                        <div class="progressbar upload-progress" style="width: 0%;"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </script>
+        </div>
+        <script>
+          require([
+              "jquery",
+              'mage/template',
+              'Magento_Ui/js/modal/alert',
+              "mage/translate",
+              "jquery/file-uploader"
+          ], function ($, mageTemplate, alert) {
+              $('#fileupload').fileupload({
+                  dataType: 'json',
+                  dropZone: '[data-tab-panel=image-management]',
+                  sequentialUploads: true,
+                  acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                  maxFileSize: <?= /* @noEscape */ $block->getFileSizeService()->getMaxFileSize() ?> ,
+                  formData: {form_key: '<?= /* @noEscape */ $block->getFormKey('formkey'); ?>'},
+                  add: function (e, data) {
+                      var progressTmpl = mageTemplate('#media_gallery_content_Uploader-template'),
+                          fileSize,
+                          tmpl;
+                      $.each(data.files, function (index, file) {
+                          fileSize = typeof file.size == "undefined" ?
+                              $.mage.__('We could not detect a size.') :
+                              byteConvert(file.size);
+                          data.fileId = Math.random().toString(33).substr(2, 18);
+                          tmpl = progressTmpl({
+                              data: {
+                                  name: file.name,
+                                  size: fileSize,
+                                  id: data.fileId
+                              }
+                          });
+                          $(tmpl).appendTo('#media_gallery_content_Uploader');
+                      });
+                      $(this).fileupload('process', data).done(function () {
+                          data.submit();
+                      });
+                  },
+                  done: function (e, data) {
+                      if (data.result && !data.result.error) {
+                          $('#wk_media_gallery_content').trigger('addItem', data.result);
+                      } else {
+                          $('#' + data.fileId)
+                              .delay(2000)
+                              .hide('highlight');
+                          alert({
+                             content: $.mage.__('We don\'t support this file extension type or file size execceds 2MB')
+                          });
+                      }
+                      $('#' + data.fileId).remove();
+                  },
+                  progress: function (e, data) {
+                      var progress = parseInt(data.loaded / data.total * 100, 10);
+                      var progressSelector = '#' + data.fileId + ' .progressbar-container .progressbar';
+                      $(progressSelector).css('width', progress + '%');
+                  },
+                  fail: function (e, data) {
+                      var progressSelector = '#' + data.fileId;
+                      $(progressSelector).removeClass('upload-progress').addClass('upload-failure')
+                          .delay(2000)
+                          .hide('highlight')
+                          .remove();
+                  }
+              });
+          });
+        </script>
+        <img class="spacer" src="<?= /* @noEscape */ $block->getViewFileUrl('images/spacer.gif')?>"/>
+        <p class="image-placeholder-text">
+                <?= $block->escapeHtml(__('Click here or drag and drop to add images.'));?>
+        </p>
+      </div>
+      <script id="media_gallery_content-template" type="text/x-magento-template">
+          <div class="image item" id="image360set"
+               data-role="image">
+               <input type="hidden"
+                     name="product[media_gallery_360][images][<%- data.file_id %>][removed]"
+                     value="" class="is-removed" data-form-part="product_form"/>
+               <input type="hidden"
+                     name="product[media_gallery_360][images][<%- data.file_id %>][file]"
+                     value="<%- data.file %>" data-form-part="product_form"/>
+              <input type="hidden"
+                     name="product[media_gallery_360][images][<%- data.file_id %>][position]"
+                     value="<%- data.position %>" data-form-part="product_form"
+                     class="position"/>
+              <img class="spacer"
+                   src="<?= /* @noEscape */ $block->getViewFileUrl('images/spacer.gif')?>"/>
+              <img class="product-360image-thumbnail" src="<%- data.url %>"/>
+              <div class="actions" >
+                  <button type="button"
+                          class="action-delete"
+                          data-role="delete-button"
+                          title="<?= $block->escapeHtml(__('Delete image')) ?>">
+                      <span>
+                                <?= $block->escapeHtml(__('Delete image')) ?>
+                      </span >
+                  </button>
+              </div >
+              <div class="image-fade"><span><?= $block->escapeHtml(__('Hidden')) ?></span></div>
+          </div>
+      </script>
+      <script class="dialog-template" type="text/x-magento-template" data-title="Image Options">
+        <div class="image-panel admin__scope-old ui-tabs-panel ui-widget-content ui-corner-bottom"
+             data-role="dialog"
+             style="display: block">
+            <div class="image-panel-preview">
+                <img src="<%- data.url %>"/>
+            </div>
+        </div>
+      </script>
+    </div>
+</div>

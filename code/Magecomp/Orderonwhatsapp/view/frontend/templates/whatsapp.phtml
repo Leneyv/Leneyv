@@ -1,0 +1,13 @@
+<?php
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+$productId = $product->getId();
+
+$product = $objectManager->create('Magento\Catalog\Model\Product')->load($productId);
+
+$productName = $product->getName(); 
+$productUrl = $product->getProductUrl(); 
+
+?>
+<a target="_blank" href="https://api.whatsapp.com/send?phone=254780153153&amp;text=%0a%0aProduct Name :: <?php echo $productName; ?>®%0a%0aProduct Url ::<?php echo $productUrl; ?>%0a%0a" class="wa_btn wa_btn_l"><img src="<?= $this->getUrl();?>pub/media/wysiwyg/small.png" data-src="<?= $this->getUrl();?>pub/media/wysiwyg/small.png" data-done="Loaded"></a>

@@ -1,0 +1,87 @@
+<?php 
+if($block->getData('product_ids') != "" && $block->getData('photo') != "")
+{ 
+    if($block->isMobile($_SERVER['HTTP_USER_AGENT']) == 1) { 
+        $browserStatus = 'mobile';
+        $mobile_cls = "mbl_cls74";
+    }
+    else
+    {
+        $browserStatus = "web";
+        $mobile_cls = "wb_vw75";
+    } 
+
+    ?> 
+<div class="mp-product-slider-block widget block-products-list">
+        <h2 class="mp-product-slider-title"><?= $block->getData('widget_title');?></h2>
+        <p class="mp-ps-info"></p>
+    </div>
+    <div class="component C0058 <?= $mobile_cls;?>">
+    <div class="promo-area active" role="tabpanel"> 
+<div class="img-area align-left text-black">
+    <div class="img">
+        <img class="pc-lg lazyloaded" alt="Save Big on our Best TVs " aria-hidden="true" src="<?= $block->getData('photo');?>" data-loaded="true"> 
+    </div>
+    <div class="text-block text-black">
+        <div class="sub-title"><h3><?= $block->getData('photo_title');?></h3></div> 
+        <p class="body-copy font-regular "><?= $block->getData('photo_description');?></p>
+        <div class="link"><a href="<?= $block->getData('photo_link');?>" target="_blank" title="Opens in a new window" class="link-text ico-right font-bold" data-link-area="best_promotion-promotion_image" data-link-name="save_big_on_our_best_tvs_" aria-label="Save Big on<br>our Best TVs "><?= $block->getData('photo_link_text');?></a></div>
+    </div>
+</div>
+<div class="list-area">
+    <div class="item-group">
+        <?php
+        $prod_set = explode(",",$block->getData('product_ids'));
+        $prod_data = $block->getProductCollectionbyIds($prod_set);
+         foreach($prod_data as $product)
+        {   
+      $actual_price = $product->getPrice();
+      $selling_price = $product->getFinalPrice();
+      $prod_img = $block->get_prodimage($product);
+?>
+<div class="item">
+    <div class="innr_bx_dv85">
+            <div class="img"><a href="<?= $product->getProductUrl();?>" target="_blank" tabindex="-1" aria-hidden="true">
+            <img class="lazyloaded" alt="<?= $product->getName();?>" src="<?= $prod_img;?>" data-loaded="true"></a></div>
+            <div class="info-area">
+                <div class="model-name" >
+                      <a  href="<?= $product->getProductUrl();?>" target="_blank" data-link-area="best_promotion-list_area-thumbnail" > <?= $product->getName();?>
+                    </a> 
+                    <span class="product-image-sku">
+                    <?= $product->getSku();?>                    
+                    </span>
+                  </div>
+                  <div class="price-area">
+                            <div class="purchase-price">
+                                <div class="price"><?= $block->get_prod_price($selling_price);?></div>
+                                <?php
+                            if($selling_price < $actual_price )
+                            {
+                                $diff_price = round($actual_price - $selling_price, 2); 
+?>
+ <div class="product-price">
+                                <del class="price"><span class="hidden">Previous price</span><?= $block->get_prod_price($actual_price);?></del> 				<div class="legal">Save <?= $block->get_prod_price($diff_price);?></div>
+                            </div>
+                            <?php
+                            } 
+                           ?>
+                            </div>
+                           
+                </div>
+                    <div class="button">
+                             <a href="<?= $product->getProductUrl();?>" target="_blank" role="button"><button type="submit"  class="action tocart primary"> <span>View</span> </button></a> 
+                    </div>			
+            </div>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+       
+    </div>
+</div>
+</div>
+</div>
+    <?php 
+}
+ 

@@ -1,0 +1,17 @@
+<!-- ko if:isShowNotificationBar() -->
+<div role="alertdialog" tabindex="-1" class="amgdprcookie-bar-container" data-amcookie-js="bar" afterRender="detectScroll.bind($data)">
+    <div role="document" class="content" tabindex="0">
+        <p class="amgdprcookie-policy" data-bind="html: policyText"></p>
+        <div class="actions">
+            <button id="btn-cookie-allow" class="action primary amgdprcookie-button -allow" data-bind="click: allowCookies">
+                <span data-bind="i18n:'Allow Cookies'"></span>
+            </button>
+            <!-- ko if:showDisallowButton -->
+            <button id="btn-cookie-disallow" class="action primary amgdprcookie-button -settings" data-bind="click: setupCookies">
+                <span data-bind="i18n:'Cookies Settings'"></span>
+            </button>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
+<!-- /ko -->

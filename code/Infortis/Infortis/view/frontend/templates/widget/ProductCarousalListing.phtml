@@ -1,0 +1,16 @@
+<?php 
+if($block->getData('sub_categ_img') != "")
+{  
+    ?> 
+        <div class="prd_hr745">
+            <a href="<?= $block->getData('sub_category_url');?>">
+        <div class="_im_mnu74_b">
+            <img src="<?= $block->getData('sub_categ_img');?>" />
+        </div>
+        <div class="prd_lst_ft858">
+        <?= $block->getData('sub_category_name');?>
+        </div>
+            </a> 
+        </div> 
+    <?php  
+}
